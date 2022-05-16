@@ -2,6 +2,14 @@ import { ProdutosService } from './../../produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product.model';
 import { Router } from '@angular/router';
+import { StatusBar, Style } from '@capacitor/status-bar';
+
+
+StatusBar.setOverlaysWebView({ overlay: true });
+
+const setBackgroundColor = async () => {
+  await StatusBar.setBackgroundColor({color: '#006400'});
+}
 
 export interface IProdutos {
   id: string

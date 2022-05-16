@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { StatusBar, Style } from '@capacitor/status-bar';
+
+
+StatusBar.setOverlaysWebView({ overlay: true });
+
+const setBackgroundColor = async () => {
+  await StatusBar.setBackgroundColor({color: '#006400'});
+}
 
 export interface IProdutos {
   id: string
