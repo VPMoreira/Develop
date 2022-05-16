@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+}
+
+.toolbar {
+  background-color: #fff;
+}
+
+.menu {
+  color: black;
+}
+
+.help_outline {
+  color: black;
+  position: absolute;
+  right: 3rem;
+}
+
+.filter_list {
+  color: black;
+  position: absolute;
+  right: 1rem;
+}
+
+.header_text {
+  color: black;
+  position: absolute;
+  margin-left: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.icons_card {
+  background-color: #fff;
+}
+
+.body_card {
+  background-color: #fff;
+}
+
+.label {
+  width: 4rem;
+  margin-bottom: 4rem;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i {
+  color: #d9cd26;
+}
+
+.delete > i {
+  color: #e35e6b;
+}

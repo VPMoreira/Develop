@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": "9CV267" ,
+      "orçamento": 845247 ,
+      "entrega": "6 de agosto de 2021" ,
+      "preço": 1280.56 ,
+      "descontos": 58.15 ,
+      "endereço": "QUARTO ANEL VIÁRIO, 2165 FORTALEZA/CE" ,
+      "pagamento": "Boleto - 14 dias",
+      "status": "Pedido Recebido"
+    }
+  ]
+}

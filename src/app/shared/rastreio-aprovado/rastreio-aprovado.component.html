@@ -1,0 +1,63 @@
+<div>
+    <header>
+        <mat-card class="icons_card">
+            <mat-toolbar class="toolbar">
+                <a mat-icon-button class="menu" routerLink="/pedidos">
+                    <mat-icon>home</mat-icon>
+                </a>
+                <span class="header_text">Pedidos</span>
+                <span class="example-spacer"></span>
+                <a mat-icon-button class="help_outline">
+                    <mat-icon>help_outline</mat-icon>
+                </a>
+                <a mat-icon-button class="filter_list">
+                    <mat-icon>filter_list</mat-icon>
+                </a>
+            </mat-toolbar>
+        </mat-card>
+        <mat-card class="body_card">
+            <thead>
+                <th style="position: absolute; top: 0.4rem; left: 1rem; width: 100px; text-align:left;"
+                    *ngFor="let element of dataSource">Pedido:{{element.id}}</th>
+                <th style="position: absolute; top: 0.4rem; right: 1rem; width: 100px; text-align:right;"
+                    *ngFor="let element of dataSource">Orc:{{element.orc}}</th>
+            </thead>
+            <br />
+            <th style="position:center; width:25rem" *ngFor="let element of dataSource">{{element.status}}</th>
+            <br />
+            <mat-progress-bar mode="determinate" value="{{element.value}}" color="green" *ngFor="let element of dataSource"></mat-progress-bar>>
+            <mat-icon class="recebido">assignment_turned_in</mat-icon>
+            <mat-icon class="check">check_box</mat-icon>
+            <mat-icon class="espera">history</mat-icon>
+            <br />
+            <th class="mensagem">
+                <a>Processamos seu pedido e logo iniciaremos a separação.</a>
+            </th>
+            <br />
+        </mat-card>
+        <mat-list>
+            <mat-list-item> Previsão de Entrega </mat-list-item>
+            <b *ngFor="let element of dataSource" class="resultado">{{element.entrega}}</b>
+            <mat-list-item> Valor Total </mat-list-item>
+            <b *ngFor="let element of dataSource" class="resultado">{{element.preco}}</b>
+            <i *ngFor="let element of dataSource" class="desconto">Desconto</i>
+            <br>
+            <b *ngFor="let element of dataSource" class="valor">{{element.descontos}}</b>
+            <mat-list-item> Endereço de Entrega </mat-list-item>
+            <b *ngFor="let element of dataSource" class="resultado">{{element.endereco}}</b>
+            <mat-list-item> Forma de Pagamento </mat-list-item>
+            <b *ngFor="let element of dataSource" class="resultado">{{element.pagamento}}</b>
+        </mat-list>
+        <br/>
+        <app-buttons></app-buttons>
+    </header>
+
+
+
+
+
+
+
+
+
+</div>

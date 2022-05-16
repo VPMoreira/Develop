@@ -1,0 +1,6 @@
+{
+	"appId": "com.develop.app",
+	"appName": "Develop",
+	"webDir": "dist/develop",
+	"bundledWebRuntime": false
+}

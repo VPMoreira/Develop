@@ -1,0 +1,26 @@
+<div class="p-grid p-justify-center card">
+    <div class="p-col-10 p-sm-6 p-md-4">
+      <mat-card class="container" align-items-center>
+        <div class="p-grid">
+          <div class="p-col-12 text-center">
+            <h2>Develop</h2>
+          </div>
+          <form [formGroup]="form" (submit)="onSubmit()">
+            <div class="p-d-flex p-flex-column">
+              <label for="">Usuário:</label>
+              <input formControlName="login" class="p-mr-2" type="text" pInputText class="form-control" name="login" id="login" required />
+            </div>
+            
+            <div class="p-d-flex p-flex-column">
+              <label for="">Senha:</label>
+              <input formControlName="senha" class="senha" type="password" pInputText class="senha" id="senha" required />
+            </div>
+            
+            <div class="p-col-12">
+              <button pButton type="button" label="Entrar" class="p-col-12 button" type="submit"></button>
+            </div>
+          </form>
+        </div>
+      </mat-card>
+    </div>
+</div>
