@@ -50,6 +50,7 @@ export class PedidosComponent implements OnInit {
   constructor(private productService: ProdutosService) { }
 
   ngOnInit(): void {
+    StatusBar.setBackgroundColor({color: '#006400'});
     
   }
 

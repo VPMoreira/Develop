@@ -40,6 +40,7 @@ export class RastreioAprovadoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    StatusBar.setBackgroundColor({color: '#006400'});
   }
 
 }

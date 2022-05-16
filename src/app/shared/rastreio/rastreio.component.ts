@@ -41,6 +41,7 @@ export class RastreioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    StatusBar.setBackgroundColor({color: '#006400'});
   }
 
 }

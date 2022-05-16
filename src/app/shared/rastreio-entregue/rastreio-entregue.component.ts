@@ -39,6 +39,7 @@ export class RastreioEntregueComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    StatusBar.setBackgroundColor({color: '#006400'});
   }
 
 }
