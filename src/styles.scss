@@ -41,9 +41,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .msg-error {
   background-color: red;
+  padding-top: 27px;
+  height: 66px;
 }
+
 
 .msg-success {
   background-color: #006400;
+  padding-top: 27px;
+  height: 66px;
+}
+
+.toolbar {
+  background-color: #fff;
+  padding-top: 27px;
 }
 
