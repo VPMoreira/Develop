@@ -30,6 +30,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -74,7 +75,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

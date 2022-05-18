@@ -39,4 +39,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @import '~font-awesome/css/font-awesome.css';
 
+.msg-error {
+  background-color: red;
+}
+
+.msg-success {
+  background-color: #006400;
+}
 

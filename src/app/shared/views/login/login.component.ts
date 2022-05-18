@@ -1,3 +1,4 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Plugins } from '@capacitor/core';
 import { async } from '@angular/core/testing';
 import { iUsuario } from './usuario';
@@ -6,6 +7,8 @@ import { AuthService } from './auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StatusBar, StatusBarStyle, Style } from '@capacitor/status-bar';
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { EMPTY, Observable } from 'rxjs';
 
 
 StatusBar.setOverlaysWebView({ overlay: true });
@@ -29,7 +32,7 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   logindata!: iUsuario
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private snackBar: MatSnackBar) {
 
   }
 
@@ -48,6 +51,19 @@ export class LoginComponent implements OnInit {
     this.authService.fazerLogin(this.logindata)
   }
 
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: isError ? ['msg-error'] : ['msg-success']
+    })
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage("Parece que algo deu errado!", true);
+    return EMPTY;
+  }
   
 
 

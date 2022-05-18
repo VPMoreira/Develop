@@ -1,9 +1,11 @@
+import { Plugins } from '@capacitor/core';
 import { ProdutosService } from './../../produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product.model';
 import { Router } from '@angular/router';
 import { StatusBar, Style } from '@capacitor/status-bar';
 
+const {App} = Plugins;
 
 StatusBar.setOverlaysWebView({ overlay: true });
 
@@ -45,13 +47,16 @@ export class PedidosComponent implements OnInit {
 
 
   dataSource = ELEMENT_DATA;
-  displayedColumns = ['id']
+  displayedColumns: any[] = ['id']
 
   constructor(private productService: ProdutosService) { }
 
   ngOnInit(): void {
     StatusBar.setBackgroundColor({color: '#006400'});
+
     
   }
+
+
 
 }
