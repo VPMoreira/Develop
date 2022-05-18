@@ -1,9 +1,9 @@
 import { Plugins } from '@capacitor/core';
-import { ProdutosService } from './../../produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StatusBar, Style } from '@capacitor/status-bar';
+import { ProdutosService } from '../services/produtos.service';
 
 const {App} = Plugins;
 
@@ -14,7 +14,7 @@ const setBackgroundColor = async () => {
 }
 const showStatusBar = async () => {
   await StatusBar.show();
-};
+}
 
 export interface IProdutos {
   id: string
@@ -36,6 +36,8 @@ const ELEMENT_DATA: IProdutos[] = [
 ]
 
 
+
+
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -45,18 +47,27 @@ const ELEMENT_DATA: IProdutos[] = [
 
 export class PedidosComponent implements OnInit {
 
-
+  pedido: any;
   dataSource = ELEMENT_DATA;
   displayedColumns: any[] = ['id']
 
-  constructor(private productService: ProdutosService) { }
+  constructor(private productService: ProdutosService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     StatusBar.setBackgroundColor({color: '#006400'});
 
-    
-  }
+    this.router.params.subscribe( params => {
+      console.log(params)
+      this.productService.getOne(params['id']).subscribe(response => {
+        this.pedido = response
+        console.log(this.pedido)
+  
+      
+    }
+
+    )})
 
 
 
+}
 }

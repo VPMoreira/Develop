@@ -15,7 +15,10 @@ const routes: Routes = [
   {path: 'pedidos/9CV269', component: RastreioSeparadoComponent},
   {path: 'pedidos/9CV270', component: RastreioTransporteComponent},
   {path: 'pedidos/9CV271', component: RastreioEntregueComponent},
-  {path: 'pedidos', component: PedidosComponent},
+  {path: 'pedidos', component: PedidosComponent, children: [
+    {path: ':id', component: RastreioEntregueComponent}
+  ]},
+  { path: 'produtos', loadChildren: () => import('./views/produtos/produtos.module').then(m => m.ProdutosModule) },
 
 ];
 

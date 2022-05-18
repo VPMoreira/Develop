@@ -1,0 +1,16 @@
+<div class="mat-elevation-z8">
+    <table mat-table>
+  
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Seus pedidos:</th>
+        <td mat-cell *ngFor="let produto of produtos " [routerLink]="produto.id">
+          <li class="pedido">{{produto.id}}</li>
+          <li class="pedido">{{produto.preco}}</li>
+          <li class="pedido">{{produto.status}}</li>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <router-outlet></router-outlet>
+  </div>
