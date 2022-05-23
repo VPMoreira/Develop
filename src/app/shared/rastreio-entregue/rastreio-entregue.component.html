@@ -25,7 +25,8 @@
             <br />
             <th style="position:center; width:25rem" *ngFor="let element of dataSource">{{element.status}}</th>
             <br />
-            <mat-progress-bar mode="determinate" value="{{element.value}}" color="green" *ngFor="let element of dataSource"></mat-progress-bar>>
+            <mat-progress-bar mode="determinate" value="{{element.value}}" color="green"
+                *ngFor="let element of dataSource"></mat-progress-bar>>
             <mat-icon class="recebido">assignment_turned_in</mat-icon>
             <mat-icon class="check">check_box</mat-icon>
             <mat-icon class="separado">assignment_returned</mat-icon>
@@ -50,6 +51,6 @@
             <mat-list-item> Forma de Pagamento </mat-list-item>
             <b *ngFor="let element of dataSource" class="resultado">{{element.pagamento}}</b>
         </mat-list>
-        <br/>
+        <br />
         <app-buttons></app-buttons>
     </header>
