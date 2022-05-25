@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
-import { Platform, AlertController } from '@ionic/angular' ;
+import { Component, ViewChild } from '@angular/core';
+import { Platform, AlertController, IonRouterOutlet } from '@ionic/angular';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { App } from '@capacitor/app';
+
+
 
 @Component({
   selector: 'app-root',
@@ -8,26 +13,24 @@ import { Platform, AlertController } from '@ionic/angular' ;
 })
 export class AppComponent {
 
-constructor(
-private platform: Platform,
-private alertController: AlertController
-){
-  this.backButtonEvent();
-}
+  @ViewChild(IonRouterOutlet, { static: true }) routerOutlet!: IonRouterOutlet;
+  constructor(
+    private platform: Platform,
+    private alertController: AlertController,
+    routerOutlet: IonRouterOutlet,
+    private location: Location,
+    private router: Router,
 
-backButtonEvent() {
-  this.platform.backButton.subscribeWithPriority(10, () => {
-    this.backButtonAlert();
-  });
-}
-
-async backButtonAlert() {
-  const alert = await this.alertController.create({
-    message: '!!!!!'
-  });
-
-  await alert.present();
-}
+  ) {
+    App.addListener('backButton', ({ canGoBack }) => {
+      if(canGoBack){
+        window.history.back();
+      } else {
+        App.exitApp();
+      }
+    });
+    
+  }
 
   title = 'Develop';
 }
