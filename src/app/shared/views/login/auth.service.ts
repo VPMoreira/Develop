@@ -10,7 +10,7 @@ import { SnackbarService } from '../../snackbar.service';
 export class AuthService {
   private usuarioAutenticado: boolean = false
 
-  constructor(private router: Router,private login: SnackbarService) { }
+  constructor(private router: Router, private login: SnackbarService) { }
 
   fazerLogin(usuario: iUsuario) {
     if (usuario.login === 'test@email.com' && usuario.senha === '123456') {
@@ -19,9 +19,7 @@ export class AuthService {
       this.login.showMessage('Login realizado com sucesso', false)
     } else {
       this.usuarioAutenticado = false;
-      this.login.showMessage('Parece que aconteceu algo', true)
-      
-      
+      this.login.showMessage('Parece que algo deu errado!', true)
     }
   }
 }
