@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, AlertController, } from '@ionic/angular';
+import { Platform, AlertController,  } from '@ionic/angular';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { App } from '@capacitor/app';
@@ -16,7 +16,7 @@ export class AppComponent {
   constructor(
   ) {
     App.addListener('backButton', ({ canGoBack }) => {
-      if (canGoBack) {
+      if(canGoBack){
         window.history.back();
       } else {
         App.exitApp();

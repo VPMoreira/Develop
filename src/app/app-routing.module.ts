@@ -9,14 +9,14 @@ import { RastreioComponent } from './shared/rastreio/rastreio.component';
 import { LoginComponent } from './shared/views/login/login.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'pedidos/9CV267', component: RastreioComponent},
-  {path: 'pedidos/9CV268', component: RastreioAprovadoComponent},
-  {path: 'pedidos/9CV269', component: RastreioSeparadoComponent},
-  {path: 'pedidos/9CV270', component: RastreioTransporteComponent},
-  {path: 'pedidos/9CV271', component: RastreioEntregueComponent},
+  {path: '', component: LoginComponent, data: { animationState: 'Login' }},
+  {path: 'pedidos/9CV267', component: RastreioComponent, data: { animationState: 'Pedido' }},
+  {path: 'pedidos/9CV268', component: RastreioAprovadoComponent, data: { animationState: 'Pedido' }},
+  {path: 'pedidos/9CV269', component: RastreioSeparadoComponent, data: { animationState: 'Pedido' }},
+  {path: 'pedidos/9CV270', component: RastreioTransporteComponent, data: { animationState: 'Pedido' }},
+  {path: 'pedidos/9CV271', component: RastreioEntregueComponent, data: { animationState: 'Pedido' }},
   {path: 'pedidos', component: PedidosComponent, children: [
-    {path: ':id', component: RastreioEntregueComponent}
+    {path: ':id', component: RastreioEntregueComponent, data: { animationState: 'Pedidos' }}
   ]},
   { path: 'produtos', loadChildren: () => import('./views/produtos/produtos.module').then(m => m.ProdutosModule) },
 

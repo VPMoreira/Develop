@@ -31,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AnimationComponent } from './shared/animation/animation.component';
 
 
 
@@ -47,7 +48,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     RastreioAprovadoComponent,
     RastreioSeparadoComponent,
     RastreioEntregueComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +79,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     MatSnackBarModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
